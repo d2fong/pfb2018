@@ -1,14 +1,8 @@
 # Scripting Tutorial
 
-# Unix
+## Command Line Interfaces (CLI) vs Graphical User Interface (GUI)
 
-## Unix 1
-
-### Unix Overview
-
-#### Command Line Interfaces (CLI) vs Graphical User Interface (GUI)
-
-##### Comparison with a Graphical User Interface (GUI)
+### Comparison with a Graphical User Interface (GUI)
 
 A GUI provides a language for interacting with the computer via graphics like buttons, widgets, and icons.
 A CLI provides a language for interacting with the computer via commands with the only visual being textual input and output.
