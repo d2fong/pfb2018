@@ -1,40 +1,4 @@
-# Programming For Biology 2018
-
-__Instructors__  
-Simon Prochnik  
-Sofia Robb     
-
-# Big Picture
-
-## Why?
-
-Why is it important for **biologists** to learn to program?
-
-You might already know the answer to this question since you are here.   
-
-We firmly believe that knowing how to program is just as essential as knowing how to run a gel or set up a PCR reaction. The data we now get from a single experiment can be overwhelming. This data often needs to be reformatted, filtered, and analyzed in unique ways. Programming allows you to perform these tasks in an **efficient** and **reproducible** way.
-
-
-## Helpful Tips
-
-What are our tips for having a successful programming course?
-
-
-1. Practice, practice, practice. Please spend as much time as possible actually coding.
-
-2. Write only a line or two of code, then test it. If you write too many lines, it becomes more difficult to debug if there is an error.
-
-3. Errors are not failures. Every error you get is a learning opportunity. Every single error you debug is a major success. Fixing errors is how you will cement what you have learned.
-
-4. Don't spend too much time trying to figure out a problem. While it's a great learning experience to try to solve an issue on your own, it's not fun getting frustrated or spending a lot of time stuck. We are here to help you, so please ask us whenever you need help.
-
-5. Lectures are important, but the practice is more important.
-
-6. Review sessions are important, but practice is more important.
-
-7. Our key goal is to slowly, but surely, teach you how to solve problems on your own.
-
----
+# Scripting Tutorial
 
 # Unix
 
@@ -42,15 +6,23 @@ What are our tips for having a successful programming course?
 
 ### Unix Overview
 
-#### What is the Command-Line?
+#### Command Line Interfaces (CLI) vs Graphical User Interface (GUI)
 
-Underlying the pretty Mac OSX Graphical User Interface (GUI) is a powerful command-line operating system (OS). The command-line gives you access to the internals of the OS, and is also a convenient way to write custom software and scripts.  
+##### Comparison with a Graphical User Interface (GUI)
+
+A GUI provides a language for interacting with the computer via graphics like buttons, widgets, and icons.
+A CLI provides a language for interacting with the computer via commands with the only visual being textual input and output.
 
 
-Many bioinformatics tools are written to run on the command-line and have no Graphical User Interface. In many cases, a command-line tool is more versatile than a graphical tool, because you can easily combine command-line tools into automated scripts that accomplish tasks without human intervention.  
+| GUI     | CLI                              |
+| --------------- | ---------------------------------------- |
+| + easy to use  | + fast |
+| - some tools don't have a GUI | - Requires knowledge of how commands work  |
+| - slow  | + allows you to automate tasks that do not require human supervision |
 
 
-In this course, we will be writing Python scripts and running them exclusively from the command-line based.
+### GUI VS CLI Tutorial
+
 
 ### The Basics
 
