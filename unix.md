@@ -1,6 +1,6 @@
 # Scripting Tutorial
 
-## Command Line Interfaces (CLI) vs Graphical User Interface (GUI)
+## Command Line Interface (CLI) vs Graphical User Interface (GUI)
 
 ### Comparison with a Graphical User Interface (GUI)
 
@@ -15,32 +15,19 @@ A CLI provides a language for interacting with the computer via commands with th
 | - slow  | + allows you to automate tasks that do not require human supervision |
 
 
-### GUI VS CLI Tutorial
+### How to open the CLI
+- windows -> **TODO**
+- linux -> **TODO**
+- mac -> **TODO**
 
-
-### The Basics
-
-#### Logging into Your Workstation
-
-
-Your workstation is an iMac. To log into it, provide your user name and password. Your username will be the first letter of your first name and two first letters of your last. You can check your username [here](https://github.com/prog4biol/pfb2018/blob/master/usernames.md).
-
-For example, for Sofia Robb her username will be sro. The password is cshl.
-
-_Your username:_ sro
-
-_Your password:_ cshl
-
-#### Bringing up the Command-Line 
-
-
-To bring up the command-line, use the Finder to navigate to _Applications->Utilities_ and double-click on the _Terminal_ application. This will bring up a window like the following:
+They all look similar:
 
 ![OSX Terminal](https://raw.githubusercontent.com/prog4biol/pfb2018/master/images/terminal_screenshot.png)
+![Windows Terminal]()
+![Linux Terminal]()
 
 
-
-You can open several Terminal windows at once. This is often helpful.
+You can open several Terminal windows/tabs at once. This is often helpful.
 
 
 You will be using the Terminal application a lot, so I suggest that you drag its icon into the shortcuts bar at the bottom of your screen.
@@ -49,46 +36,15 @@ You will be using the Terminal application a lot, so I suggest that you drag its
 #### OK. I've Logged in.  What Now?
 
 
-The terminal window is running **shell** called "bash." The shell is a loop that:
+The CLI mainly does the following:
 1. Prints a prompt
 2. Reads a line of input from the keyboard
 3. Parses the line into one or more commands
 4. Executes the commands (which usually print some output to the terminal)
 5. Go back step 1.
 
+### GUI VS CLI Tutorial TODO
 
-There are many different shells with bizarre names like **bash**, **sh**, **csh**, **tcsh**, **ksh**, and **zsh**.  The "sh" part means shell.  Each shell has different and somewhat confusing features. We have set up your accounts to use **bash**.  Stay with **bash** and you'll get used to it, eventually.
-
-
-#### Command-Line Prompt
-
-
-Most of bioinformatics is done by running command-line software in a shell, so you should take some time to learn to use the shell effectively.
-
-
-This is a command-line prompt:
-
-```
-bush202>
-```
-
-
-This is another:
-
-```
-(~) 51%
-```
-
-This is another:
-
-```
-srobb@bush202 1:12PM>
-```
-
-What you get depends on how the system administrator has customized your login.  You can customize it yourself when you know how.
-
-
-The prompt tells you the shell is ready to accept a command.  When a long-running command is going, the prompt will not reappear until the system is ready to deal with your next request.
 
 #### Issuing Commands
 
@@ -114,41 +70,7 @@ The command here is `ls -F`, which produces a listing of files and directories i
 
 Some programs will take a long time to run. After you issue their command names, you won't recover the shell prompt until they're done. You can either launch a new shell (from Terminal's File menu), or run the command in the background by adding an ampersand after the command
 
-```
-(~) 54% long_running_application &
-(~) 55%
-```
-> The command will now run in the background until it is finished. If it has any output, the output will be printed to the terminal window. You may wish to capture the output in a file (called redirection). We'll describe this later.
 
-#### Command-Line Editing
-
-Most shells offer command-line editing.  Up until the comment you press \<Enter\>, you can go back over the command-line and edit it using the keyboard.  Here are the most useful keystrokes:
-
-- _Backspace_: Delete the previous character and back up one.
-- _Left arrow_, right arrow: Move the text insertion point (cursor) one character to the left or right.
-- _control-a (^a)_: Move the cursor to the beginning of the line. (Mnemonic: A is first letter of alphabet)
-- _control-e (^e)_: Move the cursor to the end of the line. Mnemonic: E for the End (^z was already used for interrupt a command).
-- _control-d (^d)_: Delete the character currently under the cursor. D=Delete.
-- _control-k (^k)_: Delete the entire line from the cursor to the end. k=kill.  The line isn't actually deleted, but put into a temporary holding place called the "kill buffer". This is like cutting text
-- _control-y (^y)_: Paste the contents of the kill buffer onto the command-line starting at the cursor.  y=yank. This is like paste.
-- _Up arrow, down arrow_: Move up and down in the command history.  This lets you reissue previous commands, possibly after modifying them.
-
-There are also some useful shell commands you can issue:  
-
-- `history` Show all the commands that you have issued recently, nicely numbered.
-- `!<number>` Reissue an old command, based on its number (which you can get from `history`).
-- `!!` Reissue the immediate previous command.
-- `!<partial command string>`: Reissue the previous command that began with the indicated letters.  For example, `!l` (the letter el, not a number 1) would reissue the`ls -F` command from the earlier example.
-
-**bash** offers automatic command completion and spelling correction.  If you type part of a command and then the tab key, it will prompt you with all the possible completions of the command.  For example:
-
-```
-(~) 51% fd<tab><tab>
-(~) 51% fd
-fd2ps    fdesign  fdformat fdlist   fdmount  fdmountd fdrawcmd fdumount
-(~) 51%
-```
-> If you hit tab after typing a command, but before pressing \<Enter\>, **bash** will prompt you with a list of file names. This is because many commands operate on files.
 
 #### Wildcards
 
@@ -321,28 +243,7 @@ You can cluster short switches by concatenating them together, as shown in this 
      23     941 /var/log/messages
 ```
 
-Many commands will give a brief usage summary when you call them with the `-h` or `--help` switch.
-
-#### Spaces and Funny Characters
-
-The shell uses whitespace (spaces, tabs, and other non-printing characters) to separate arguments.  If you want to embed whitespace in an argument, put single quotes around it.  For example:
-
-```
-mail -s 'An important message' 'Bob Ghost <bob@ghost.org>'
-```
-This will send an e-mail to the fictitious person Bob Ghost.  The `-s` switch takes an argument, which is the subject line for the e-mail.  Because the desired subject contains spaces, it has to have quotes around it. Likewise, my name and e-mail address, which contain embedded spaces, must also be quoted in this way.
-
-
-Certain special non-printing characters have _escape codes_ associated with them:
-
-
-| Escape Code | Description                              |
-| ----------- | ---------------------------------------- |
-| \\n         | new line character                       |
-| \\t         | tab character                            |
-| \\r         | carriage return character                |
-| \\a         | bell character (ding! ding!)             |
-| \\nnn       | the character whose ASCII code is **nnn** |
+Many commands will give a brief usage summary when you call them with the `-h` or `--help` switch.|
 
 
 #### Useful Commands
@@ -393,24 +294,6 @@ Here are some commands that are used extremely frequently.  Use `man` to learn m
 | `ping`                 | See if a remote host is up.              |
 | `ftp`/ `sftp` (secure) | Transfer files using the File Transfer Protocol. |
 
-#### Standard I/O and Redirection
-
-
-Unix commands communicate via the command-line interface.  They can print information out to the terminal for you to see, and accept input from the keyboard (that is, from _you_!)
-
-
-Every Unix program starts out with three connections to the outside world.  These connections are called "streams", because they act like a stream of information (metaphorically speaking):
-
-
-| Stream Type     | Description                              |
-| --------------- | ---------------------------------------- |
-| standard input  | This is a communications stream initially attached to the keyboard.  When the program reads from standard input, it reads whatever text you type in. |
-| standard output | This stream is initially attached to the terminal. Anything the program prints to this channel appears in your terminal window. |
-| standard error  | This stream is also initially attached to the terminal. It is a separate channel intended for printing error messages. |
-
-The word "initially" might lead you to think that standard input, output, and error can somehow be detached from their starting places and reattached somewhere else.  And you'd be right.  You can attach
-one or more of these three streams to a file, a device, or even to another program.  This sounds esoteric, but it is actually very useful.
-
 #### A Simple Example
 
 
@@ -451,43 +334,6 @@ Now if you `cat` the file _count.txt_, you'll see that the data has been recorde
       2943    2998     419272
 ```
 
-#### Redirection Meta-Characters
-
-Here's the complete list of redirection commands for `bash`:
-
-| Redirect command    | Description                              |
-| ------------------- | ---------------------------------------- |
-| `< myfile.txt`      | Redirect the contents of the file to standard input |
-| `> myfile.txt`      | Redirect standard output to file         |
-| `>> logfile.txt`    | Append standard output to the end of the file |
-| `1 > myfile.txt`    | Redirect just standard output to file (same as above) |
-| `2 > myfile.txt`    | Redirect just standard error to file     |
-| `> myfile.txt 2>&1` | Redirect both stdout and stderr to file  |
-
-
-These can be combined.  For example, this command redirects standard input from the file named `/etc/passwd`, writes its results into the file `search.out`, and writes its error messages (if any) into a file named `search.err`.  What does it do?  It searches the password file for a user named "root" and returns all lines that refer to that user.
-
-```
-(~) 66% grep root < /etc/passwd > search.out 2> search.err
-```
-
-#### Filters, Filenames, and Standard Input
-
-Many Unix commands act as filters, taking data from a file or standard input, transforming the data, and writing the results to standard output.  Most filters are designed so that if they are called with one or more filenames on the command-line, they will use those files as input.  Otherwise they will act on standard input.  For example, these two commands are equivalent:
-
-```
-(~) 66% grep 'gatttgc' < big_file.fasta
-(~) 67% grep 'gatttgc' big_file.fasta
-```
-Both commands use the `grep` command to search for the string "gatttgc" in the file `big_file.fasta`.  The first one searches standard input, which happens to be redirected from the file.  The second command is explicitly given the name of the file on the command line.
-
-
-Sometimes you want a filter to act on a series of files, one of which happens to be standard input.  Many commands let you use `-` on the command-line as an alias for standard input.  Example:
-
-```
-(~) 68% grep 'gatttgc' big_file.fasta bigger_file.fasta -
-```
-This example searches for "gatttgc" in three places.  First it looks in file `big_file.fasta`, then in `bigger_file.fasta`, and lastly in standard input (which, since it isn't redirected, will come from the keyboard).
 
 
 #### Standard I/O and Pipes
@@ -774,18 +620,4 @@ If you are ever wondering what do you need to add to your remote repository use 
 | --------------------------------------- | ---------------------------------------- |
 | `git status` | To see a list of files that have been modified, deleted, and those that are untracked |
 
-
-#### Links to *slightly* less basic topics  
-
-You will KNOW if you need to use these features of git.
-
-1. [View Commit History](https://git-scm.com/book/en/v2/Git-Basics-Viewing-the-Commit-History)
-2. [Resolving Merge Conflicts](https://help.github.com/articles/resolving-a-merge-conflict-using-the-command-line/)
-3. [Undoing Previous Commits](https://github.com/blog/2019-how-to-undo-almost-anything-with-git)
-
----
-
-### [Link To Unix 2 Problem Set](https://github.com/prog4biol/pfb2018/blob/master/problemsets/Unix_02_problemset.md)
-
----
 
